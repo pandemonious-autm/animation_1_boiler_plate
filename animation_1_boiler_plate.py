@@ -6,6 +6,9 @@ from pygame.locals import *
 width = <SET WIDTH OF SCREEN (INT)> # adjust for width of canvas
 height = <SET HEIGHT OF SCREEN (INT)> # adjust for height of canvas
 
+# frame rate
+fps = 60
+
 # colors
 background_color = <SET BACKGROUND COLOR HERE IN R,G,B (TUPLE OF INTS)>
 
@@ -50,7 +53,7 @@ sprite_index = 0
 counter = 0
 def spritePicker():
     global sprite_index
-    if counter % 20 == 0:
+    if counter % 20 == 0: # adjust the number to the right of the "%" symbol to increase/decrease animation speed
         if sprite_index == total_sprites - 1:
             sprite_index = 0
         else:
@@ -91,7 +94,7 @@ while running:
     spritePicker()
     pygame.display.update()
     counter += 1
-    clock.tick(60)
+    clock.tick(fps)
 
 # close pygame down
 pygame.quit()
