@@ -3,14 +3,14 @@ import pygame, sys
 from pygame.locals import *
 
 # canvas variables
-width = <SET WIDTH OF SCREEN (INT)> # adjust for width of canvas
-height = <SET HEIGHT OF SCREEN (INT)> # adjust for height of canvas
+width = 1920 # adjust for width of canvas
+height = 1080 # adjust for height of canvas
 
 # frame rate
 fps = 60
 
 # colors
-background_color = <SET BACKGROUND COLOR HERE IN R,G,B (TUPLE OF INTS)>
+background_color = (255, 255, 255)
 
 # initializing pygame, setting up the surface (canvas)
 pygame.init()
@@ -18,15 +18,15 @@ canvas = pygame.display.set_mode((width, height))
 pygame.display.set_caption("<YOUR DISPLAY CAPTION GOES HERE (STRING)>") # add a caption for your canvas
 
 # import assets
-sprite_sheet = pygame.image.load("<YOUR FILE AND PATH GO HERE (STRING)>").convert_alpha() # add the path/name of your sprite sheet file
+sprite_sheet = pygame.image.load("MINIGAMES-2.png").convert_alpha() # add the path/name of your sprite sheet file
 
 # get details about individual sprites
-total_sprites = <ENTER NUMBER OF SPRITES HERE (INT)> # code the number of sprite images your sprite sheet has
+total_sprites = (6) # code the number of sprite images your sprite sheet has
 sprite_sheet_width = sprite_sheet.get_rect().width
 sprite_sheet_height = sprite_sheet.get_rect().height
 
 # adjust sprite size
-sprite_scale_factor = <INSERT YOUR SCALE FACTOR HERE (DECIMAL)>
+sprite_scale_factor = 1
 sprite_sheet_width = sprite_sheet_width * sprite_scale_factor
 sprite_sheet_height = sprite_sheet_height * sprite_scale_factor
 sprite_sheet = pygame.transform.scale(sprite_sheet, (sprite_sheet_width, sprite_sheet_height))
@@ -38,8 +38,8 @@ sprite_height = sprite_sheet_height
 # define initial x and y position of sprite
 sprite_x_pos = 0
 sprite_y_pos = 0
-sprite_x_delta = <INSERT HOW MUCH YOU WANT YOUR SPRITE TO MOVE HORIZONTALLY (INT)>
-sprite_y_delta = <INSERT HOW MUCH YOU WANT YOUR SPRITE TO MOVE VERTICALLY (INT)>
+sprite_x_delta = 5
+sprite_y_delta = 5
 
 # load sprite sheet into list
 sprite_list = []
